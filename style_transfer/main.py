@@ -5,7 +5,11 @@ import os
 from utils import local_css, remote_css
 
 st.set_page_config(layout="wide")
-st.title("Style Transfer")
+st.title("Neural Style Transfer")
+st.write(
+    "#### Written by [Zito Relova](https://github.com/zitorelova/neural-style-app)"
+)
+
 path = os.path.dirname(__file__)
 local_css(os.path.join(path, "css/style.css"))
 remote_css("https://fonts.googleapis.com/icon?family=Material+Icons")
@@ -30,8 +34,6 @@ output_image = os.path.join(
 )
 
 content_col, style_col = st.beta_columns(2)
-
-
 content_col.write("### Content Image")
 style_col.write("### Style Image")
 loaded_content_image = Image.open(content_path)
@@ -42,13 +44,16 @@ content_col.image(
 )
 style_col.image(loaded_style_image, width=400)
 
+st.text("")
 _, use_col, _ = st.beta_columns(3)
+_, img_col, _ = st.beta_columns([1.85, 3, 2.5])
+
 clicked = use_col.button("Stylize")
 
 if clicked:
     model = style.load_model(model)
     style.stylize(model, content_path, output_image)
 
-    use_col.write("### Output Image")
+    img_col.write("### Output Image")
     image = Image.open(output_image)
-    use_col.image(image, width=400)
+    img_col.image(image, width=400)
