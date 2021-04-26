@@ -1,0 +1,11 @@
+.stButton>button {
+    color: #fff;
+    background-color: #4F8BF9;
+    height: 3em;
+    width: 10em;
+}
+
+.stButton>button:hover {
+    color: #000;
+    border: 3px solid #000;
+}
