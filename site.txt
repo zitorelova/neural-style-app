@@ -1,2 +1,0 @@
-https://style-transfer-application.herokuapp.com/
-https://git.heroku.com/style-transfer-application.git
