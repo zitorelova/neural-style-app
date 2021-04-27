@@ -1,5 +1,6 @@
 import streamlit as st
 from PIL import Image
+from io import BytesIO
 
 
 def local_css(file_name):
@@ -12,7 +13,10 @@ def remote_css(url):
 
 
 def load_image(filename, size=None, scale=None):
-    img = Image.open(filename).convert("RGB")
+    if isinstance(filename, str):
+        img = Image.open(filename).convert("RGB")
+    else:
+        img = Image.open(BytesIO(filename))
     if size is not None:
         img = img.resize((size, size), Image.ANTIALIAS)
     elif scale is not None:
