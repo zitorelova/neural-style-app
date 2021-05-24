@@ -12,6 +12,8 @@ In neural style transfer, a neural network (VGG16) takes one image, the "content
 
 The neural networks used for styling images are implemented in [Pytorch](https://pytorch.org/) while the application itself is written using [Streamlit](https://streamlit.io/).
 
+For more details on the training code and training your own style models, refer to [this](https://github.com/zitorelova/neural-style-transfer) repository.
+
 ## Running the application locally
 
 To run the application locally, install the required dependencies by running
