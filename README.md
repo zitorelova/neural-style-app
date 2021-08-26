@@ -2,7 +2,7 @@
 
 This is an implementation of the Neural Style Transfer algorithm using Pytorch.
 
-Website: https://share.streamlit.io/zitorelova/neural-style-app/main/style_transfer/main.py
+The demo site can be viewed [here.](https://share.streamlit.io/zitorelova/neural-style-app/main/style_transfer/main.py)
 
 ### Stylize an image
 
